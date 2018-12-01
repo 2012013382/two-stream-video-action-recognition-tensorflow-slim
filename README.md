@@ -1,5 +1,5 @@
 # two-stream-video-action-recognition-tensorflow-slim
-Basic two stream video action classification by tensorflow slim.
+Basic two stream video action classification by tensorflow slim. I fuse two streams by adding logits together simply. 
 ## Requirement
 Memory: 4GB (at least)
 
