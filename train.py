@@ -6,7 +6,6 @@ import os
 from data_loader import get_batches
 from data_loader import get_frame_indices
 import argparse
-from nets import nets_factory
 from model import two_stream_model
 from data_loader import IMG_HEIGHT
 from data_loader import IMG_WIDTH
