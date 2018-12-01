@@ -1,9 +1,8 @@
 import tensorflow as tf
 import tensorflow.contrib.slim as slim
-import nets
 import numpy as np
 import time
-from nets import nets_factory
+from tensorflow.contrib.slim.nets import nets_factory
 
 def two_stream_model(rgb_image, flow_image, model_name, num_classes, keep_prob, batch_size, FRAMES_PER_VIDEO, is_training=True):
     #build model by slim.
