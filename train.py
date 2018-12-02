@@ -101,7 +101,7 @@ def train_fusion():
         #variables_for_training = slim.get_variables_to_restore(include=['flow_model', 'rgb_model'])#include=['rgb_model/vgg_16/fc8'])
         two_stream_loss = flow_loss + rgb_loss
         opt = tf.train.AdamOptimizer(args.lr)
-	    optimizer = slim.learning.create_train_op(two_stream_loss, opt)#, variables_to_train = variables_for_training)
+	optimizer = slim.learning.create_train_op(two_stream_loss, opt)#, variables_to_train = variables_for_training)
         saver = tf.train.Saver()
 
         summary_op = tf.summary.merge_all()
@@ -194,11 +194,11 @@ def train_fusion():
                 #validation
                 ls_epoch = 0
                 acc_epoch = 0
-		        rgb_acc_epoch = 0
-		        flow_acc_epoch = 0
-		        best_epoch = 0
-		        best_rgb_acc = 0
-		        best_flow_acc = 0
+		rgb_acc_epoch = 0
+		flow_acc_epoch = 0
+		best_epoch = 0
+		best_rgb_acc = 0
+		best_flow_acc = 0
                 batch_index = 0
                 v_step = 0
                 for i in range(len(validation_video_indices) // args.batch_size):
@@ -214,20 +214,21 @@ def train_fusion():
                                                                                           is_training: False})
                     ls_epoch += ls
                     acc_epoch += acc
-		            rgb_acc_epoch += rgb_acc
-		            flow_acc_epoch += flow_acc
+		    rgb_acc_epoch += rgb_acc
+		    flow_acc_epoch += flow_acc
 
                 if best_val_acc < acc_epoch / v_step:
                     best_val_acc = acc_epoch / v_step
-		            best_epoch = epoch
-		            saver.save(sess, TRAIN_CHECK_POINT + 'best_trained.ckpt')
+		    best_epoch = epoch
+		    saver.save(sess, TRAIN_CHECK_POINT + 'best_trained.ckpt')
                 if best_val_ls > ls_epoch / v_step:
                     best_val_ls = ls_epoch / v_step
-		        if best_rgb_acc < rgb_acc_epoch / v_step:
+		if best_rgb_acc < rgb_acc_epoch / v_step:
                     best_rgb_acc = rgb_acc_epoch / v_step
-		        if best_flow_acc < flow_acc_epoch / v_step:
+		if best_flow_acc < flow_acc_epoch / v_step:
                     best_flow_acc = flow_acc_epoch / v_step
 
                 print('Validation best acc {}, best ls {}, best rgb acc {}, best flow acc {}, loss {}, acc {}, rgb_acc {}, flow_acc {}'.format(best_val_acc, best_val_ls, best_rgb_acc, best_flow_acc, ls_epoch / v_step, acc_epoch / v_step, rgb_acc_epoch / v_step, flow_acc_epoch / v_step))
+
 if __name__ == "__main__":
     train_fusion()
