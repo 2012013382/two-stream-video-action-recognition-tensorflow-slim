@@ -100,12 +100,10 @@ def get_batches(rgb_file_name, flow_file_name, batch_size, video_indices, batch_
         flow_labels.append(label)
     #Convert to numpy
     rgb_images = np.array(rgb_images).astype(np.float32)#shape[BATCH_SIZE * FRAMES_PER_VIDEO, IMG_HEIGHT, IMG_WIDTH, IMG_CHANNEL]
-    rgb_labels = np.reshape(np.array(rgb_labels).astype(np.int32), [-1, 101])#shape[BATCH_SIZE, 101]
     flow_images = np.array(flow_images).astype(np.float32)#shape[BATCH_SIZE * FRAMES_PER_VIDEO, IMG_HEIGHT, IMG_WIDTH, IMG_FLOW_CHANNEL]
-    flow_labels = np.reshape(np.array(flow_labels).astype(np.int32), [-1, 1])#shape[BATCH_SIZE, 1]
     batch_index = batch_index + batch_size
     rgb_batch_data = {'images': rgb_images, 'labels': rgb_labels}
-    flow_batch_data = {'images': flow_images, 'labels': flow_labels}
+    flow_batch_data = {'images': flow_images}
 
     rgb_f.close()
     flow_f.close()
