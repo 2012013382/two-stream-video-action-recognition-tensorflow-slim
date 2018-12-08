@@ -29,7 +29,7 @@ FLOW_INPUT_WEIGHTS_RES_v1_50 = '../check_point/flow_inputs_weights_res_v1_50.ckp
 parser = argparse.ArgumentParser(description='UCF101 two stream fusion')
 parser.add_argument('--network', default='resnet_v1_50', type=str, help='network name')
 parser.add_argument('--epoches', default=500, type=int, help='number of total epoches')
-parser.add_argument('--lr', default=1e-3, type=float, help='start learning rate')
+parser.add_argument('--lr', default=1e-4, type=float, help='start learning rate')
 parser.add_argument('--batch_size', default=5, type=int, help='batch size')
 parser.add_argument('--class_number', default=101, type=int, help='class number of UCF-101')
 parser.add_argument('--keep_prob', default=0.85, type=float, help='drop out rate for vgg.')
