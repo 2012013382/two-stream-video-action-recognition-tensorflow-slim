@@ -147,7 +147,8 @@ def train_fusion():
                                                                                TRAIN_FLOW_PATH, 
                                                                                args.batch_size, 
                                                                                train_video_indices, 
-                                                                               batch_index)
+                                                                               batch_index,
+									       'two_stream')
                     
                     _, ls, rgb_ls, flow_ls, rgb_acc, flow_acc, acc, summary = sess.run([optimizer,
                                                                                     two_stream_loss,
@@ -208,7 +209,8 @@ def train_fusion():
                                                                                VALIDATION_FLOW_PATH,
                                                                                args.batch_size,
                                                                                validation_video_indices,
-                                                                               batch_index)
+                                                                               batch_index,
+									       'two_stream')
                     ls, acc, rgb_acc, flow_acc = sess.run([two_stream_loss, two_stream_accuracy, rgb_accuracy, flow_accuracy], feed_dict={rgb_image: rgb_batch_data['images'],
                                                                                           flow_image: flow_batch_data['images'],
                                                                                           label: rgb_batch_data['labels'],
