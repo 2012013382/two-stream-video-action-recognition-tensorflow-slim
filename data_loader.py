@@ -42,8 +42,8 @@ def read_image(file_name, mode):
         img = cv2.imread(file_name)
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     
-    rate = random.uniform(-0.25, 0.25)#Rescale +- 25%
-    img = cv2.resize(img, (int(256 * (1 + rate)), int(256 * (1 + rate))))#Rescale HEIGHT, WIDTH
+    #rate = random.uniform(-0.25, 0.25)#Rescale +- 25%
+    #img = cv2.resize(img, (int(256 * (1 + rate)), int(256 * (1 + rate))))#Rescale HEIGHT, WIDTH
     img = np.array(cv2.resize(np.array(img), (IMG_HEIGHT, IMG_WIDTH))).astype(np.float32)
     img = img / 255
 
