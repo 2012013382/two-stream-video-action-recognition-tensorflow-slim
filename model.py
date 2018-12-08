@@ -25,7 +25,7 @@ def two_stream_model(rgb_image, flow_image, model_name, num_classes, keep_prob, 
         #flow stream
         with tf.variable_scope('flow_stream'):
             if model_name == 'vgg_16':
-                flow_logits = flow_end_points['flow_model/vgg_16/fc8/suqeezed']
+                flow_logits = flow_end_points['flow_model/vgg_16/fc8']
             elif model_name == 'resnet_v1_50':
                 flow_logits = flow_end_points['flow_model/resnet_v1_50/logits']
                 flow_logits = tf.squeeze(flow_logits, [1, 2])
@@ -48,7 +48,7 @@ def two_stream_model(rgb_image, flow_image, model_name, num_classes, keep_prob, 
             #flow stream
             with tf.variable_scope('flow_stream'):
                 if model_name == 'vgg_16':
-                    flow_logits = flow_end_points['flow_model/vgg_16/fc8/suqeezed']
+                    flow_logits = flow_end_points['flow_model/vgg_16/fc8']
                 elif model_name == 'resnet_v1_50':
                     flow_logits = flow_end_points['flow_model/resnet_v1_50/logits']
                     flow_logits = tf.squeeze(flow_logits, [1, 2])
