@@ -23,7 +23,7 @@ MODEL_DIR = '../check_point/two_stream_trained.ckpt'
 
 parser = argparse.ArgumentParser(description='test UCF101 two stream fusion')
 parser.add_argument('--network', default='resnet_v1_50', type=str, help='network name')
-parser.add_argument('--lr', default=1e-3, type=float, help='start learning rate')
+parser.add_argument('--lr', default=1e-4, type=float, help='start learning rate')
 parser.add_argument('--batch_size', default=10, type=int, help='batch size')
 parser.add_argument('--class_number', default=101, type=int, help='class number')
 parser.add_argument('--keep_prob', default=0.5, type=float, help='keep prob')
