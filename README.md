@@ -48,10 +48,33 @@ cd ..
 python data_process.py
 ```
 ## Train
+If you want to train two stream
+
 ```
-python train.py
+python train_two_stream.py
 ```
+
+If you only want to  train rgb stream
+
+```
+python train_rgb.py
+```
+
+If you only want to train flow stream
+
+```
+python train_flow.py
+```
+
 ## Validaion
-I extract 1/8 videos from train set(UCF-101 split1) adn the result is about 92%(Resnet_v1_50).
+I extract around 1/8 videos from train set(UCF-101 split1) and results in the following chart are base on Resnet_v1_50.
+
+|  Two Stream   |
+| ------------- |
+|     0.813     |
 ## Test
-Waiting for...
+The following results are based on Resnet_v1_50
+
+|  Two Stream   |      rgb      |      flow     |
+| ------------- | ------------- | ------------- |
+|     0.780     |      0.71     |      0.541    |
