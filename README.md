@@ -1,5 +1,5 @@
 # two-stream-video-action-recognition-tensorflow-slim
-Basic two stream video action classification by tensorflow slim. I fuse two streams by adding logits together simply. 
+Basic two stream video action classification by tensorflow slim. I fuse two streams by adding logits together simply. I use pretrained models to extract features and no more operations.
 ## Requirement
 Memory: 4GB (at least)
 
@@ -78,3 +78,5 @@ The following results are based on Resnet_v1_50
 |  Two Stream   |      rgb      |      flow     |
 | ------------- | ------------- | ------------- |
 |     0.780     |      0.71     |      0.541    |
+## More 
+More results are coming...
