@@ -14,8 +14,25 @@ I use gpu_flow from feichtenhfer https://github.com/feichtenhofer/gpu_flow to ob
 ```
 cd gpu_flow-master
 mkdir -p build
+cd build
 cmake ..
 make
+```
+
+If there are errors, apply
+
+```
+cd ..
+rm -r build
+mkdir -p build
+cd build
+cmake -D CUDA_USE_STATIC_CUDA_RUNTIME=OFF ..
+make
+```
+
+Then
+
+```
 mkdir -p UCF_101_flow
 ```
 Then, place UCF-101 dataset into the 'build' folder.
