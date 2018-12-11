@@ -86,9 +86,9 @@ python train_flow.py
 ## Validaion
 I extract around 1/8 videos from train set(UCF-101 split1) and results in the following chart are base on Resnet_v1_50.
 
-|  Two Stream   |
-| ------------- |
-|     0.813     |
+|  Two Stream   |  rgb   |  flow   |
+| ------------- |--------|---------|
+|     0.813     |  0.743 |  0.646  |
 ## Test
 The following results are based on Resnet_v1_50
 
