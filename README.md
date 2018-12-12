@@ -9,6 +9,11 @@ Hard disk: 25GB (at least)
 ## Some preparation
 ### Data set
 UCF-101 http://crcv.ucf.edu/data/UCF101.php
+
+### tensorflow nets
+```
+git clone https://github.com/tensorflow/models/tree/master/research/slim/nets
+```
 ### Flow frames
 I use gpu_flow from feichtenhfer https://github.com/feichtenhofer/gpu_flow to obtain flow frames of UCF-101.
 ```
