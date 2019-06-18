@@ -41,7 +41,7 @@ def write_flow_file(root, video_path, file_names, f, label):#FLOW_LENGTH * FRAME
         for i in range(sample_start - FLOW_LENGTH // 2, sample_start + FLOW_LENGTH // 2):
             f.write(join(root, file_names[i]) + ' ')
         sample_start += interval
-    sample_start = 0
+    sample_start = interval // 2
     for _ in range(FRAMES_PER_VIDEO):
         if sample_start - FLOW_LENGTH // 2 < 0:
             sample_start = FLOW_LENGTH // 2
